@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.json.simple.JSONObject;
+
 public class Request {
     private Atm atm;
     private List<RequestType> requestTypes;
@@ -39,5 +41,12 @@ public class Request {
 
     public int getRegionId() {
         return atm.getRegionId();
+    }
+
+    public JSONObject toJSONObject() {
+        JSONObject jsonObj = new JSONObject();
+        jsonObj.put("region", this.getRegionId());
+        jsonObj.put("atmId", this.getAtmId());
+        return jsonObj;
     }
 }
