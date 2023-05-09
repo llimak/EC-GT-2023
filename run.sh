@@ -1,1 +1,2 @@
-java -jar target/app.jar
+#!/bin/bash
+java -jar target/ecocode-1.0-SNAPSHOT.jar
